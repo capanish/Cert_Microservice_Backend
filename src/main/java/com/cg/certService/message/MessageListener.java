@@ -17,6 +17,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
 
 
 @Component
@@ -29,6 +31,9 @@ public class MessageListener {
 
 	@Autowired
 	private SimpMessagingTemplate template;
+	
+	@Autowired
+       private Tracer tracer;
 
 	@StreamListener(target = Sink.INPUT,
 			condition="headers['message']=='tramitada'")
@@ -38,6 +43,8 @@ public class MessageListener {
 		Message<Cert> message = new ObjectMapper().readValue(messageJson, new TypeReference<Message<Cert>>(){});
 		message.getPayload().setStatus("Tramitada");
 		message.setLabel("Tramitada");
+	      Span span = tracer.buildSpan("Receiving Tramitada Event from microservice 1 in microservice 3").start();
+	      span.finish();
 		this.template.convertAndSend("/topic/status", message.getPayload());
 
 
@@ -52,6 +59,8 @@ public class MessageListener {
 		Message<Cert> message = new ObjectMapper().readValue(messageJson, new TypeReference<Message<Cert>>(){});
 		message.getPayload().setStatus("Denegada");
 		message.setLabel("Denegada-9");
+	     Span span = tracer.buildSpan("Receiving Denegada Event from microservice 1 in microservice 3").start();
+	      span.finish();
 		this.template.convertAndSend("/topic/status", message.getPayload());
 
 	}
