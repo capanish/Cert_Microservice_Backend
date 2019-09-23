@@ -47,7 +47,7 @@ public class CertController {
 	@CrossOrigin
 	@PostMapping("/cert")
 	public void initialProcess(@RequestBody Cert e) {
-		Span span = tracer.buildSpan("Initiating Status Request").start();
+		Span span = tracer.buildSpan("Initiating Status Request from microservice 3").start();
 		Message<Cert> message = new Message<Cert>("enCursoEvent", e);
 		span.finish();
 		messageSender.send(message);	
