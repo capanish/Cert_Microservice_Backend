@@ -9,7 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@EnableDiscoveryClient
 @ComponentScan("com.cg.certService.*")
 public class CertServiceApplication {
 
