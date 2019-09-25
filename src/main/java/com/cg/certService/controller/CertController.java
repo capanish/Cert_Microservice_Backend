@@ -28,7 +28,6 @@ import io.opentracing.Tracer;
 
 
 @RequestMapping("adif")
-@CrossOrigin(origins="*")
 @RestController
 public class CertController {
 	
