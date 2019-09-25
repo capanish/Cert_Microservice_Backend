@@ -35,7 +35,7 @@ public class MessageListener {
 	@Autowired
        private Tracer tracer;
         
-	@CrossOrigin
+	
 	@StreamListener(target = Sink.INPUT,
 			condition="headers['message']=='tramitada'")
 		  @Transactional
@@ -52,7 +52,7 @@ public class MessageListener {
 
 	}
         
-	@CrossOrigin
+	
 	@StreamListener(target = Sink.INPUT,
 			condition="headers['message']=='certdenegada'")
 		  @Transactional
