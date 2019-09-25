@@ -55,7 +55,7 @@ public class CertController {
 	}
 	
 	//to add values in master schema
-	@CrossOrigin
+	//@CrossOrigin
 	@PostMapping("/master")
 	public MasterProvision CreateNew(@RequestBody Composite c)
 	{
@@ -65,7 +65,7 @@ public class CertController {
 		return db.saveAndFlush(pro);
 	}
 	
-	@CrossOrigin
+	//@CrossOrigin
 	@GetMapping("/master/list")
 	public List<MasterProvision> getAll()
 	{
