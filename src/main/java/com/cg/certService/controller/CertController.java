@@ -44,7 +44,7 @@ public class CertController {
 	 @Autowired
 	    private Tracer tracer;
 	
-	//@CrossOrigin
+	@CrossOrigin
 	@PostMapping("/cert")
 	public void initialProcess(@RequestBody Cert e) {
 		Span span = tracer.buildSpan("Initiating Status Request from microservice 3").start();
@@ -55,7 +55,7 @@ public class CertController {
 	}
 	
 	//to add values in master schema
-	//@CrossOrigin
+	@CrossOrigin
 	@PostMapping("/master")
 	public MasterProvision CreateNew(@RequestBody Composite c)
 	{
@@ -65,7 +65,7 @@ public class CertController {
 		return db.saveAndFlush(pro);
 	}
 	
-	//@CrossOrigin
+	@CrossOrigin
 	@GetMapping("/master/list")
 	public List<MasterProvision> getAll()
 	{
@@ -73,7 +73,7 @@ public class CertController {
 		
 	}
 	
-	//@CrossOrigin
+	@CrossOrigin
 	@GetMapping("/budget/list")
 	public List<Budget> getAllCodigo()
 	{
