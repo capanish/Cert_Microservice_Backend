@@ -9,7 +9,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
+//import org.springframework.web.bind.annotation.CrossOrigin;
 import com.cg.certService.controller.CertController;
 import com.cg.certService.domain.Cert;
 import com.fasterxml.jackson.core.JsonParseException;
