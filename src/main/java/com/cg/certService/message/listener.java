@@ -5,6 +5,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import java.io.IOException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.cg.certService.domain.Cert;
