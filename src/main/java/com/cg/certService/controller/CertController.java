@@ -22,7 +22,7 @@ import com.cg.certService.domain.MasterDb;
 import com.cg.certService.domain.MasterProvision;
 import com.cg.certService.message.Message;
 import com.cg.certService.message.MessageSender;
-
+import java.util.Collections;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 
@@ -77,7 +77,7 @@ public class CertController {
 	@GetMapping("/master/list")
 	public List<Budget> getAllCodigo()
 	{
-		return db1.findAll();
+		return Collections.sort(db1.findAll());
 	}
 	
 	
