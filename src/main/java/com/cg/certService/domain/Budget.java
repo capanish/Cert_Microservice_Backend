@@ -13,17 +13,17 @@ public class Budget {
 	@Id
 	@NotNull
 	@Column(name="codigo_sap_expediente",unique=true)
-	private String codigo_sap_expediente;
+	private String codigo;
 	
 	@Column(name="cod_sociedad",columnDefinition="ENUM('2000','2100') default '2000'")
     private String cod_sociedad;
 	
-	public String getCodigo_sap_expediente() {
-		return codigo_sap_expediente;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setCodigo_sap_expediente(String codigo_sap_expediente) {
-		this.codigo_sap_expediente = codigo_sap_expediente;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getCod_sociedad() {
