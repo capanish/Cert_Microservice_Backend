@@ -66,7 +66,7 @@ public class CertController {
 	}
 	
 	@CrossOrigin
-	@GetMapping("/master/list")
+	@GetMapping("/master1/list")
 	public List<MasterProvision> getAll()
 	{
 		return db.findAll();
@@ -74,7 +74,7 @@ public class CertController {
 	}
 	
 	@CrossOrigin
-	@GetMapping("/budget/list")
+	@GetMapping("/master/list")
 	public List<Budget> getAllCodigo()
 	{
 		return db1.findAll();
