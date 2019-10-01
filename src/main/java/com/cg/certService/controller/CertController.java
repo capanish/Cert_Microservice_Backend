@@ -77,7 +77,7 @@ public class CertController {
 	@GetMapping("/master/list")
 	public List<Budget> getAllCodigo()
 	{
-		List<Budget> list = db1.finAll();
+		List<Budget> list = db1.findAll();
                 list.sort((s1,s2) -> (s1.getCodigo()).compareTo(s2.getCodigo()));
 		return list;
 	}
