@@ -33,7 +33,7 @@ public class listener {
 		Message<Cert> message = new ObjectMapper().readValue(messageJson, new TypeReference<Message<Cert>>(){});
 		message.getPayload().setStatus("Tramitada");
 		message.setLabel("Tramitada");
-	      Span span = tracer.buildSpan("Receiving Tramitada Event from microservice 1 in microservice 3").start();
+	      Span span = tracer.buildSpan("Receiving Tramitada Event from microservice 2 in microservice 3").start();
 	      span.finish();
 		this.template.convertAndSend("/topic/status", message.getPayload());
 
